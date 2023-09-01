@@ -2,7 +2,9 @@ import argparse
 import ipaddress
 import dns.resolver
 
-def reverse_dns(ip_address, nameserver='1.1.1.1'):
+DEFAULT_NAMESERVER = '1.1.1.1'
+
+def reverse_dns(ip_address, nameserver):
    resolver = dns.resolver.Resolver(configure=False)
    if nameserver:
       resolver.nameservers = [nameserver]
@@ -14,7 +16,7 @@ def reverse_dns(ip_address, nameserver='1.1.1.1'):
       return None
 
 
-def reverse_dns_for_prefix(prefix, print_all, dns_server=None):
+def reverse_dns_for_prefix(prefix, print_all, dns_server):
    network = ipaddress.ip_network(prefix, strict=False)
    for ip in network:
       domain_name = reverse_dns(ip, dns_server)
@@ -39,10 +41,10 @@ def parse_args():
    parser.add_argument("--prefix", type=str, default=None, help="IP prefix to scan (e.g., '192.168.1.0/24').")
    
    # Print all attempts or just successful resolutions
-   parser.add_argument("--print", type=str, choices=['all', 'successful'], default=None, dest="print_choice", help="Choose to print all attempts or just successful resolutions.")
+   parser.add_argument("--print", type=str, choices=['all', 'successful'], default='all', dest="print_choice", help="Choose to print all attempts or just successful resolutions.")
    
    # DNS Server
-   parser.add_argument("--dns-server", type=str, default=None, help="Specify the DNS server's IP for resolution.")
+   parser.add_argument("--dns-server", type=str, default=DEFAULT_NAMESERVER, help="Specify the DNS server's IP for resolution.")
 
    return parser.parse_args()
 
@@ -69,7 +71,6 @@ def main():
       prefix = args.prefix
       print_all = True if args.print_choice == "all" else False
    
-   print(prefix, print_all, args.dns_server)
    reverse_dns_for_prefix(prefix, print_all, args.dns_server)
 
 if __name__ == '__main__':
