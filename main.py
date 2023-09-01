@@ -8,7 +8,7 @@ def reverse_dns(ip_address):
         return None
 
 def reverse_dns_for_prefix(prefix, print_all):
-    network = ipaddress.ip_network(prefix)
+    network = ipaddress.ip_network(prefix, strict=False)
     for ip in network:
         domain_name = reverse_dns(ip)
         if domain_name:
