@@ -13,7 +13,7 @@ cd prefix-reverse-dns-lookup
 
 2. Run the script:
 ```
-python3 reverse_dns.py
+python3 prefix_reverse_dns_lookup.py
 ```
 
 3. Enter the desired IP prefix (e.g., 192.0.2.0/24).
