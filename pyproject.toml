@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "prefix_reverse_dns_lookup", from = "src"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.7"
 
 
 [build-system]
