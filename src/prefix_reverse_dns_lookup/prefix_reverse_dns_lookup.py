@@ -56,7 +56,6 @@ def main():
       while not validate_prefix(prefix):
          prefix = input("Enter the prefix (e.g. 192.0.2.0/24): ")
 
-      if args.print_choice is None:
          choice = input("Print all attempts or just successful resolutions? (all/successful): ").strip().lower()
          if choice.startswith('a'):
                print_all = True
@@ -65,8 +64,6 @@ def main():
          else:
                print("Invalid choice. Defaulting to printing all attempts.")
                print_all = True
-      else:
-         print_all = True if args.print_choice == "all" else False
    else:
       prefix = args.prefix
       print_all = True if args.print_choice == "all" else False
