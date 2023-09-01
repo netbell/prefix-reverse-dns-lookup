@@ -29,7 +29,6 @@ if __name__ == '__main__':
     
    while not validate_prefix(prefix):
       prefix = input("Enter the prefix (e.g. 192.0.2.0/24): ")
-      exit(1)
 
    choice = input("Print all attempts or just successful resolutions? (all/successful): ").strip().lower()
    if choice.lower().startswith('a'):
