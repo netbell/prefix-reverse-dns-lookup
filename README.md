@@ -10,7 +10,7 @@ Python 3
 1. Clone the repository:
 ```
 git clone https://github.com/netbell/prefix-reverse-dns-lookup.git
-cd prefix-reverse-dns-lookup
+cd src/prefix-reverse-dns-lookup/
 ```
 
 2. Run the script:
@@ -21,10 +21,10 @@ python3 prefix_reverse_dns_lookup.py
 3. Enter the desired IP prefix (e.g., 192.0.2.0/24).
 
 4. Choose whether you'd like to:
- - Print all lookup attempts, or
- - Only display successful resolutions.
+ - Print all lookup attempts
+ - Only display successful resolutions
 
-The tool will then display the reverse DNS results for each IP address in the specified prefix.
+The script will then display the reverse DNS results for each IP address in the specified prefix.
 
 Features
 - Supports both IPv4 and IPv6 prefixes.
