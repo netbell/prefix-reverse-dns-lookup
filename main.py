@@ -20,9 +20,9 @@ if __name__ == '__main__':
     prefix = input("Enter the prefix (e.g. 192.0.2.0/24): ")
     
     choice = input("Print all attempts or just successful resolutions? (all/successful): ").strip().lower()
-    if choice.startswith('a'):
+    if choice.lower().startswith('a'):
         print_all = True
-    elif choice.startswith('s'):
+    elif choice.lower().startswith('s'):
         print_all = False
     else:
         print("Invalid choice. Defaulting to printing all attempts.")
