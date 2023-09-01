@@ -5,7 +5,7 @@ This code performs reverse DNS lookups for all IP addresses within a given IP pr
 
 ## Requirements
 - Python 3
-- dnspython library: Install via pip with pip install dnspython.
+- dnspython library: Install via pip with `pip install dnspython`.
 
 ## Usage
 1. Clone the repository:
@@ -44,6 +44,8 @@ To perform a reverse DNS lookup on the prefix 192.168.1.0/24 and print only succ
 ```
 python prefix_reverse_dns_lookup.py --prefix 192.168.1.0/24 --print successful --dns-server 8.8.8.8
 ```
+
+If you do not provide command-line arguments, the program will prompt you to input them interactively.
 
 The script will then display the reverse DNS results for each IP address in the specified prefix.
 
