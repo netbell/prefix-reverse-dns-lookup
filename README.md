@@ -1,3 +1,5 @@
+[![Tests](https://github.com/netbell/prefix-reverse-dns-lookup/actions/workflows/tests.yml/badge.svg)](https://github.com/netbell/prefix-reverse-dns-lookup/actions/workflows/tests.yml)
+
 # Prefix Reverse DNS Lookup
 This code performs reverse DNS lookups for all IP addresses within a given IP prefix.
 
